@@ -27,10 +27,11 @@ public class CreateCaseFile {
     String todaysDate = new SimpleDateFormat("yyyyMMdd").format(Calendar.getInstance().getTime());
 
 
+
     public CreateCaseFile() {
         caseToUploadBaseFileLocation = GlobalVariables.getPathToProgram() + "Base\\" + "case_to_upload.xml";
+//TODO change to finish at end        caseToUploadfileLocation = GlobalVariables.getPathToProgram() + "Example\\" + "W" + todaysDate + GlobalVariables.getFileNumber() + "-01_out.xml";
         caseToUploadfileLocation = GlobalVariables.getPathToProgram() + "Example\\" + "case_to_upload.xml";
-//        this.PrepareDataToWrite();
 
     }
 
@@ -88,7 +89,7 @@ public class CreateCaseFile {
         SetWAR();
     }
 
-    void WriteDataToFile() {
+    String WriteDataToFile() {
         Document preparedData = this.PrepareDataToWrite();
         Source input = new DOMSource(preparedData);
         Transformer transformer;
@@ -99,6 +100,7 @@ public class CreateCaseFile {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return caseToUploadfileLocation;
     }
 
     private void SetAplication() {
