@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         CreateCaseFile newFile = new CreateCaseFile();
         //TODO Create file
-        System.out.println(newFile.ReadDataFromFile());
+        newFile.WriteDataToFile();
         //TODO Pack file
         //TODO Sending to Webdav
         //TODO B2B request - soap - create
