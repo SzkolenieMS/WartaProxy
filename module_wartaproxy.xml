@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_wartaproxy" default="compile.module.wartaproxy">
+  <dirname property="module.wartaproxy.basedir" file="${ant.file.module_wartaproxy}"/>
+  
+  <property name="module.jdk.home.wartaproxy" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.wartaproxy" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.wartaproxy" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.wartaproxy" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="wartaproxy.output.dir" value="${module.wartaproxy.basedir}/out/production/WartaProxy"/>
+  <property name="wartaproxy.testoutput.dir" value="${module.wartaproxy.basedir}/out/test/WartaProxy"/>
+  
+  <path id="wartaproxy.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="wartaproxy.module.production.classpath">
+    <path refid="${module.jdk.classpath.wartaproxy}"/>
+  </path>
+  
+  <path id="wartaproxy.runtime.production.module.classpath">
+    <pathelement location="${wartaproxy.output.dir}"/>
+  </path>
+  
+  <path id="wartaproxy.module.classpath">
+    <path refid="${module.jdk.classpath.wartaproxy}"/>
+    <pathelement location="${wartaproxy.output.dir}"/>
+  </path>
+  
+  <path id="wartaproxy.runtime.module.classpath">
+    <pathelement location="${wartaproxy.testoutput.dir}"/>
+    <pathelement location="${wartaproxy.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.wartaproxy">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.wartaproxy">
+    <patternset refid="excluded.from.module.wartaproxy"/>
+  </patternset>
+  
+  <path id="wartaproxy.module.sourcepath">
+    <dirset dir="${module.wartaproxy.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.wartaproxy" depends="compile.module.wartaproxy.production,compile.module.wartaproxy.tests" description="Compile module WartaProxy"/>
+  
+  <target name="compile.module.wartaproxy.production" depends="register.custom.compilers" description="Compile module WartaProxy; production classes">
+    <mkdir dir="${wartaproxy.output.dir}"/>
+    <javac2 destdir="${wartaproxy.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.wartaproxy}/javac">
+      <compilerarg line="${compiler.args.wartaproxy}"/>
+      <bootclasspath refid="wartaproxy.module.bootclasspath"/>
+      <classpath refid="wartaproxy.module.production.classpath"/>
+      <src refid="wartaproxy.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.wartaproxy"/>
+    </javac2>
+    
+    <copy todir="${wartaproxy.output.dir}">
+      <fileset dir="${module.wartaproxy.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.wartaproxy.tests" depends="register.custom.compilers,compile.module.wartaproxy.production" description="compile module WartaProxy; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.wartaproxy" description="cleanup module">
+    <delete dir="${wartaproxy.output.dir}"/>
+    <delete dir="${wartaproxy.testoutput.dir}"/>
+  </target>
+</project>
