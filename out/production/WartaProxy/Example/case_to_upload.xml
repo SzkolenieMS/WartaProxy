@@ -19,31 +19,31 @@
     </user>
   </header>
   <dane_szkody>
-    <id_zdarzenia>698177</id_zdarzenia>
-    <id_szkody>204646</id_szkody>
-    <numer_zdarzenia>W201705251515</numer_zdarzenia>
-    <numer_szkody>W201705251515-01</numer_szkody>
-    <id_zadania>1704</id_zadania>
-    <nazwa_zadania>$nazwa_zadania$</nazwa_zadania>
-    <data_zdarzenia>$data_zdarzenia$</data_zdarzenia>
-	<czy_aplikacja_mobilna>true</czy_aplikacja_mobilna>
+    <id_zdarzenia>791086</id_zdarzenia>
+    <id_szkody>887981</id_szkody>
+    <numer_zdarzenia>W201705251170</numer_zdarzenia>
+    <numer_szkody>W201705251170-01</numer_szkody>
+    <id_zadania>1589</id_zadania>
+    <nazwa_zadania>Ogledziny pojazdu</nazwa_zadania>
+    <data_zdarzenia>2015-11-01</data_zdarzenia>
+	
 	<numer_telefonu>+7777</numer_telefonu>
 	<adres_email>maciej.ppp@o2.pl</adres_email>
 	
 	
     <kod_pocztowy>63-140</kod_pocztowy>
-    <rodzaj_polisy>$POLICY$</rodzaj_polisy>
+    <rodzaj_polisy>ACK</rodzaj_polisy>
   </dane_szkody>
   <dane_pojazdu>
     <id_infoekspert>129919</id_infoekspert>
     <rodzaj_pojazdu>Naczepy</rodzaj_pojazdu>
-    <nr_VIN>$VIN$</nr_VIN>
+    <nr_VIN>VNKKL983X0A103379</nr_VIN>
     <nr_rejestracyjny>PGS1F31</nr_rejestracyjny>
     <nazwa_marki>KRONE</nazwa_marki>
     <nazwa_modelu>SDR 27</nazwa_modelu>
     <nazwa_typu>35.5t eL4-DS</nazwa_typu>
     <rok_produkcji>2006</rok_produkcji>
-    <data_pierw_rejestr>$data_rej$</data_pierw_rejestr>
+    <data_pierw_rejestr>2017-11-01</data_pierw_rejestr>
     <rodzaj_nadwozia>chlodnia z agregatem</rodzaj_nadwozia>
     <typ_mocy>kW</typ_mocy>
     <rodzaj_paliwa>olej napedowy</rodzaj_paliwa>
@@ -60,11 +60,11 @@
         <stawka_lakier>55.00</stawka_lakier>
         <stawka_bla_inne>55.00</stawka_bla_inne>
         <normalia>0.00</normalia>
-        <VAT>$with_vat</VAT>
+        <VAT>TAK</VAT>
       </rodz_kalkulacji>
       <rodz_kalkulacji typ="WAR">
         <rodzaj_zamiennika>O</rodzaj_zamiennika>
-        <amortyzacja_czesci>$WAR$.00</amortyzacja_czesci>
+        <amortyzacja_czesci>11.22</amortyzacja_czesci>
         <potr_mat_lakier>100.00</potr_mat_lakier>
         <zamienniki>NIE</zamienniki>
         <stawka_lakier>95.00</stawka_lakier>
